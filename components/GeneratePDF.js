@@ -1,34 +1,34 @@
 import { useState, useEffect } from 'react'
-import { Page, Text, Document, StyleSheet, PDFDownloadLink, usePDF } from '@react-pdf/renderer';
+import { Page, Text, Document, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
 
-export default function GeneratePDF(){
-  const [isClient, setIsClient] = useState(false)
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
+// function GeneratePDF(){
+//   const [isClient, setIsClient] = useState(false)
+//   useEffect(() => {
+//     setIsClient(true)
+//   }, [])
   
-  return (
-    <>
-      {isClient && 
-        <PDFDownloadLink 
-          document={<MyDocument />} 
-          fileName="somename.pdf"
-        >
-        {({ blob, url, loading, error }) => 
-          loading 
-          ? (<span>Loading document...</span>)
-          : (<span>Download now!</span>)
-        }
-        </PDFDownloadLink>
-      }
-    </>
-  )
-}
+//   return (
+//     <>
+//       {isClient && 
+//         <PDFDownloadLink 
+//           document={<MyDocument />} 
+//           fileName="somename.pdf"
+//         >
+//         {({ blob, url, loading, error }) => 
+//           loading 
+//           ? (<span>Loading document...</span>)
+//           : (<span>Download now!</span>)
+//         }
+//         </PDFDownloadLink>
+//       }
+//     </>
+//   )
+// }
 
 
 
 // Create Document Component
-function MyDocument() {
+export default function MyDocument() {
   return (
     <Document>
       <Page style={styles.body}>
